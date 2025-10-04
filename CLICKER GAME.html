@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CLICKER GAME</title>
+    <!--by nathan orcutt-->
+    <p id="note"></p>
+    <style>
+        html {
+            background-color: aqua;
+        }
+        header {
+            text-align: center;
+            font-size: xx-large;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: block;
+            padding: 20px;
+            border-radius: 20px;
+            cursor: default;
+            background-image: linear-gradient(to right, cyan, blue, blue);
+            
+        }
+        p {
+            text-align: center;
+            font-size: large;
+            background-color: aqua;
+            text-decoration: solid;
+            text-shadow: 20px 20px 20px 20px rgba(red, green, blue, alpha);
+        }   
+        button {
+            margin: auto;
+            display: block;
+            cursor: pointer;
+            padding: 20px;
+            border-radius: 20px;
+            background-color: cornflowerblue;
+            border-width: 10px;
+        }
+        button:hover {
+            background-color: rgb(42, 120, 162);
+
+        }body{
+            background-color: aqua;
+        }footer{
+            text-align: center;
+            position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: lightgray;
+    text-align: center;
+    padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>CLICKER I GUESS</header>
+
+    <button onclick="clickCookie()" >CLICK FOR POINTS</button>
+    <p id="clicks">1</p>
+    <button onclick="buy()" id="buy">BUY</button>
+
+    <script>
+        let clicks = 1;
+        let upgrade = 0; 
+       let cost = 10;
+       let idk = 1;
+        function buy() {
+            if (clicks >= 10) {
+               idk++
+                cost++
+                clicks -= cost; // spend cost amt of cookies
+                upgrade = 1;  
+                document.getElementById("clicks").innerHTML = clicks;
+            }else{
+                document.getElementById("note").innerHTML = "NOT ENOUGH POINTS";
+            }
+        }
+
+        function clickCookie() {
+            if (upgrade === 0) {
+                clicks++;
+            } else {
+                clicks += idk;
+            }
+            document.getElementById("clicks").innerHTML = clicks;
+        }
+    </script>
+    <footer>
+        BY NATHAN ORCUTT 
+    </footer>
+</body>
+</html>
